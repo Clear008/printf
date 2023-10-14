@@ -31,6 +31,7 @@ awinx++;
 }
 else
 {
+awcount += handle_format(format, &awinx, awls_rg);
 }
 }
 else
