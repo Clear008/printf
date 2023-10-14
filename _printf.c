@@ -4,50 +4,77 @@
 #include<string.h>
 #include "main.h"
 /**
+ * aw_write_char - write a character.
+ * @c:is a string.
+ * @awcount: counter
+ */
+void aw_write_char(char c, int *awcount)
+{
+	write(1, &c, 1);
+	(*awcount)++;
+}
+/**
+ * aw_write_string - write string.
+ * @awst_r:  is a string.
+ * @awcount: counter.
+ */
+
+void aw_write_string(char *awst_r, int *awcount)
+{
+int awlength = 0;
+while (awst_r[awlength] != '\0')
+{
+	awlength++;
+}
+write(1, awst_r, awlength);
+*awcount += awlength;
+}
+/**
  * _printf - a function that handle s,c and %.
  * @format:  is a character string.
  * Return: the number of characters printed.
  */
+
 int _printf(const char *format, ...)
 {
+char c, *awst_r;
+int awcount = 0, awinx = 0;
 va_list awls_ag;
-char *awst_r, c;
-int awcount = 0, awlength;
 if (format == NULL)
 	return (-1);
 va_start(awls_ag, format);
-while (*format)
+while (format && format[awinx])
 {
-	if (*format != '%')
+	if (format[awinx] != '%')
 	{
-		write(1, format, 1);
-		awcount++;
+		aw_write_char(format[awinx], &awcount);
 	}
 	else
 	{
-		format++;
-		if (*format == 'c')
+		awinx++;
+		if (format[awinx] == 'c')
 		{
 			c = va_arg(awls_ag, int);
-			write(1, &c, 1);
-			awcount++;
+			aw_write_char(c, &awcount);
 		}
-		else if (*format  == 's')
+		else if (format[awinx]  == 's')
 		{
 			awst_r = va_arg(awls_ag, char *);
 			if (awst_r == NULL)
 				awst_r = "(null)";
-			awlength = strlen(awst_r);
-			write(1, awst_r, awlength);
-		       awcount += awlength;
+			aw_write_string(awst_r, &awcount);
 		}
-		else if (*format == '%')
+		else if (format[awinx] == '%')
 		{
-			write(1, "%", 1);
-			awcount++;
+			aw_write_char('%', &awcount);
+		}
+		else
+		{
+			aw_write_char('%', &awcount);
+			aw_write_char(format[awinx], &awcount);
 		}
 	}
-	format++;
+	awinx++;
 }
 va_end(awls_ag);
 return (awcount);
