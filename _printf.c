@@ -3,11 +3,11 @@
 #include "main.h"
 
 /**
-* _printf - a function that prints anything
-* @format: list of types
-*
-* Return: the number of characters printed (excluding the null byte)
-*/
+ * _printf - a function that prints anything
+ * @format: list of types
+ *
+ * Return: the number of characters printed (excluding the null byte)
+ */
 int _printf(const char *format, ...)
 {
 int awinx = 0, awcount = 0;
@@ -29,20 +29,8 @@ else
 {
 awcount += aw_print_cha(format[awinx]);
 }
-
 awinx++;
-
-if (format[awinx] == '%')
-{
-awinx++;
-if (!format[awinx])
-{
-break;
-}
-}
-
 }
 va_end(awls_rg);
 return (awcount);
 }
-
