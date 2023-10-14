@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 {
 va_list awls_ag;
 char *awst_r, c;
-int awcount = 0;
+int awcount = 0, awlength;
 if (format == NULL)
 	return (-1);
 va_start(awls_ag, format);
@@ -37,8 +37,9 @@ while (*format)
 			awst_r = va_arg(awls_ag, char *);
 			if (awst_r == NULL)
 				awst_r = "(null)";
-			write(1, awst_r, strlen(awst_r);
-		       awcount += strlen;
+			awlength = strlen(awst_r);
+			write(1, awst_r, awlength);
+		       awcount += awlength;
 		}
 		else if (*format == '%')
 		{
@@ -51,5 +52,3 @@ while (*format)
 va_end(awls_ag);
 return (awcount);
 }
-
-
