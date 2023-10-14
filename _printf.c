@@ -23,23 +23,23 @@ while (format && format[awinx])
 {
 if (format[awinx] == '%')
 {
-awinx++;
-if (format[awinx] == '%')
-{
-aw_print_cha('%');
-awinx++;
-}
-else
-{
 awcount += handle_format(format, &awinx, awls_rg);
 }
-}
 else
 {
-aw_print_cha(format[awinx]);
+awcount += aw_print_cha(format[awinx]);
+}
 awinx++;
+
+if (format[awinx] == '%')
+{
+awinx++;
+if (!format[awinx])
+{
+break;
 }
 }
-	va_end(awls_rg);
-	return (awcount);
+}
+va_end(awls_rg);
+return (awcount);
 }
