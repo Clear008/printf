@@ -19,18 +19,26 @@ int _printf(const char *format, ...)
 	}
 
 	va_start(awls_rg, format);
-	while (format && format[awinx])
-	{
-		if (format[awinx] == '%')
-		{
-			awcount += handle_format(format, &awinx, awls_rg);
-		}
-		else
-		{
-			awcount += aw_print_cha(format[awinx]);
-		}
-		awinx++;
-	}
+while (format && format[awinx])
+{
+if (format[awinx] == '%')
+{
+awinx++;
+if (format[awinx] == '%')
+{
+aw_print_cha('%');
+awinx++;
+}
+else
+{
+}
+}
+else
+{
+aw_print_cha(format[awinx]);
+awinx++;
+}
+}
 	va_end(awls_rg);
 	return (awcount);
 }
