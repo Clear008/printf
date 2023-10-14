@@ -25,7 +25,7 @@ return (1);
  * @awst_r: list of arguments
  * Return: number of characters printed
  */
-int aw_print_str(char *awst_r)
+int aw_print_str(const char *awst_r)
 {
 	int aw_length = 0;
 if (awst_r == NULL)
