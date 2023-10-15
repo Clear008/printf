@@ -44,6 +44,13 @@ int handle_format(const char *format, int *index, va_list args)
 		case '%':
 			awcount += aw_percent_sn();
 			break;
+		case 'u':
+			awcount += aw_print_unsigned(va_arg(args, unsigned int));
+			break;
+
+		case 'o':
+			awcount += aw_print_octal(va_arg(args, unsigned int));
+			break;
 		default:
 			awcount += aw_print_cha('%');
 			awcount += aw_print_cha(format[*index]);
