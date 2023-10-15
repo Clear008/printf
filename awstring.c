@@ -8,36 +8,36 @@
 
 int aw_percent_sn(void)
 {
-char percent = '%';
-return (write(1, &percent, 1));
+char awpercent = '%';
+return (write(1, &awpercent, 1));
 }
 /**
  * aw_print_cha - prints a character
- * @a: list of arguments
+ * @awa: list of arguments
  * Return: number of characters printed
  */
-int aw_print_cha(char a)
+int aw_print_cha(char awa)
 {
-return (write(1, &a, 1));
+return (write(1, &awa, 1));
 }
 /**
  * aw_print_str - prints a string
- * @a: a pointer
+ * @awa: a pointer
  * Return: number of characters printed
  */
-int aw_print_str(const char *a)
+int aw_print_str(const char *awa)
 {
-int count = 0;
-if (a == NULL)
+int awcount = 0;
+if (awa == NULL)
 {
 return (-1);
 }
-if (a)
+if (awa)
 {
-for (count = 0; a[count] != '\0'; count++)
+for (awcount = 0; awa[awcount] != '\0'; awcount++)
 {
-aw_print_cha(a[count]);
+aw_print_cha(a[awcount]);
 }
 }
-return (count);
+return (awcount);
 }
