@@ -57,7 +57,7 @@ int handle_format(const char *format, int *index, va_list args)
 			awcount += aw_print_hex(va_arg(args, unsigned int), 1);
 			break;
 		case 'S':
-			awcount += aw_print_ups(va_arg(awls_ag, char *));
+			awcount += aw_print_ups(va_arg(args, char *));
 			break;
 		default:
 			awcount += aw_print_cha('%');
