@@ -36,7 +36,7 @@ if (awa)
 {
 for (awcount = 0; awa[awcount] != '\0'; awcount++)
 {
-aw_print_cha(a[awcount]);
+aw_print_cha(awa[awcount]);
 }
 }
 return (awcount);
