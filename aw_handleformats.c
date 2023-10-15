@@ -2,9 +2,9 @@
 #include "main.h"
 
 /**
- * handle_format - Handles the '%' character in the format string.
- * @format: The format string.
- * @index: Current index in the format string.
+ * handle_format - Handles '%' in the format string.
+ * @format: format string.
+ * @index: Current index
  * @args: Argument list.
  *
  * Return: The number of characters printed.
