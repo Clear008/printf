@@ -34,6 +34,13 @@ int handle_format(const char *format, int *index, va_list args)
 			number = va_arg(args, int);
 			awcount += aw_print_int(number);
 			break;
+		case 'b':
+		{
+			unsigned int binary_num = va_arg(args, unsigned int);
+
+			awcount += aw_print_bin(binary_num);
+			break;
+		}
 		case '%':
 			awcount += aw_percent_sn();
 			break;
