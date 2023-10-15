@@ -7,7 +7,7 @@
  * Return: result
  */
 
-int aw_write_ups(char *awst_r)
+int aw_print_ups(char *awst_r)
 {
 int awinx = 0;
 char *aw_hex = "0123456789ABCDEF";
