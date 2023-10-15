@@ -4,50 +4,50 @@
 
 /**
  * recursive_print - Recursively prints an integer.
- * @n: The integer to be printed.
+ * @aw_n: The integer to be printed.
  *
  * Return: The number of digits printed.
  */
-int recursive_print(int n)
+int recursive_print(int aw_n)
 {
-	int count = 0;
+	int aw_count = 0;
 
-	if (n == 0)
+	if (aw_n == 0)
 	{
 		return (aw_print_cha('0'));
 	}
 
-	if (n / 10)
+	if (aw_n / 10)
 	{
-		count += recursive_print(n / 10);
+		aw_count += recursive_print(aw_n / 10);
 	}
-	count += aw_print_cha(n % 10 + '0');
+	aw_count += aw_print_cha(aw_n % 10 + '0');
 
-	return (count);
+	return (aw_count);
 }
 
 /**
  * aw_print_int - Prints an integer.
- * @n: The integer to be printed.
+ * @aw_n: The integer to be printed.
  *
  * Return: The number of digits printed.
  */
-int aw_print_int(int n)
+int aw_print_int(int aw_n)
 {
-	int count = 0;
+	int aw_count = 0;
 
-	if (n == INT_MIN)
+	if (aw_n == INT_MIN)
 	{
 		return (aw_print_str("-2147483648"));
 	}
 
-	if (n < 0)
+	if (aw_n < 0)
 	{
-		n = -n;
+		aw_n = -aw_n;
 		aw_print_cha('-');
-		count++;
+		aw_count++;
 	}
 
-	return (count + recursive_print(n));
+	return (aw_count + recursive_print(aw_n));
 }
 
