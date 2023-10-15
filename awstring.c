@@ -1,4 +1,5 @@
 #include"main.h"
+#include <unistd.h>
 
 /**
  * aw_percent_sn - prints a percent sign
@@ -7,8 +8,8 @@
 
 int aw_percent_sn(void)
 {
-putchar('%');
-return (1);
+char percent = '%';
+return (write(1, &percent, 1));
 }
 /**
  * aw_print_cha - prints a character
@@ -17,8 +18,7 @@ return (1);
  */
 int aw_print_cha(char a)
 {
-putchar(a);
-return (1);
+return (write(1, &a, 1));
 }
 /**
  * aw_print_str - prints a string
@@ -27,17 +27,17 @@ return (1);
  */
 int aw_print_str(const char *awst_r)
 {
-	int aw_length = 0;
-if (awst_r == NULL)
+int count = 0;
+if (a == NULL)
 {
 return (-1);
 }
-while (awst_r[aw_length] != '\0')
+if (a)
 {
-putchar(awst_r[aw_length]);
-aw_length++;
+for (count = 0; a[count] != '\0'; count++)
+{
+aw_print_cha(a[count]);
 }
-
-return (aw_length);
 }
-
+return (count);
+}
