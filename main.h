@@ -16,5 +16,4 @@ int aw_print_octal(unsigned int n);
 int _printf(const char *format, ...);
 int handle_format(const char *format, int *index, va_list args);
 
-
 #endif /* MAIN_H */
