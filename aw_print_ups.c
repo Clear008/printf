@@ -1,7 +1,7 @@
 #include <unistd.h>
 #include "main.h"
 /**
- * aw_write_ups - function to write a string and
+ * aw_print_ups - function to write a string and
  * handle S custom conversion specifier
  * @awst_r: a string
  * Return: result
