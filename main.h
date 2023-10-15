@@ -4,6 +4,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 
+int aw_write_ups(char *awst_r);
 int aw_print_int(int n);
 int aw_print_cha(char c);
 int aw_print_str(const char *s);
