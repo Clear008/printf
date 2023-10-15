@@ -1,4 +1,5 @@
 #include <stdarg.h>
+#include <unistd.h>
 #include "main.h"
 
 int aw_print_hex_recursive(unsigned int aw_n, char *aw_lookup)
