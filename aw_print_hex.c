@@ -4,12 +4,13 @@
 
 int aw_print_hex_recursive(unsigned int aw_n, char *aw_lookup)
 {
+	int aw_count;
+	char aw_c;
+
 	if (aw_n == 0)
 		return (0);
-
-	int aw_count = aw_print_hex_recursive(aw_n / 16, aw_lookup);
-
-	char aw_c = aw_lookup[aw_n % 16];
+	aw_count = aw_print_hex_recursive(aw_n / 16, aw_lookup);
+	aw_c = aw_lookup[aw_n % 16];
 	write(1, &aw_c, 1);
 
 	return (aw_count + 1);
