@@ -22,10 +22,10 @@ return (write(1, &a, 1));
 }
 /**
  * aw_print_str - prints a string
- * @awst_r: list of arguments
+ * @a: a pointer 
  * Return: number of characters printed
  */
-int aw_print_str(const char *awst_r)
+int aw_print_str(const char *a)
 {
 int count = 0;
 if (a == NULL)
