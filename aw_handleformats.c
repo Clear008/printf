@@ -51,13 +51,11 @@ int handle_format(const char *format, int *index, va_list args)
 			awcount += aw_print_octal(va_arg(args, unsigned int));
 			break;
 		case 'x':
-				aw_n = va_arg(args, unsigned int);
-				count += aw_print_hex(aw_n, 0);
-				break;
+			awcount += aw_print_hex(va_arg(args, unsigned int), 0);
+			break;
 		case 'X':
-				aw_n = va_arg(args, unsigned int);
-				count += aw_print_hex(aw_n, 1);
-				break;
+			awcount += aw_print_hex(va_arg(args, unsigned int), 1);
+			break;
 		default:
 			awcount += aw_print_cha('%');
 			awcount += aw_print_cha(format[*index]);
