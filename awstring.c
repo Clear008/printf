@@ -22,7 +22,7 @@ return (write(1, &a, 1));
 }
 /**
  * aw_print_str - prints a string
- * @a: a pointer 
+ * @a: a pointer
  * Return: number of characters printed
  */
 int aw_print_str(const char *a)
